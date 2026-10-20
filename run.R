@@ -1,6 +1,7 @@
 #!/usr/bin/env Rscript
 
 library(argparse)
+library(zellkonverter)
 
 # Source main functions
 source("src/main.R")
@@ -20,6 +21,9 @@ parser$add_argument("--data.h5ad", dest="data_h5ad",
 parser$add_argument("--data.clusters_truth_num", dest="data_clusters_truth_num",
                    type="character", nargs="+", required=TRUE,
                    help="Input: data.clusters_truth_num")
+parser$add_argument("--seed", dest = "seed", 
+                    type = "integer", required = TRUE, 
+                    help = "Random seed")
 
 args <- parser$parse_args()
 
@@ -28,6 +32,4 @@ cat("Module name:", args$name, "\n")
 cat("data.h5ad:", args$data_h5ad, "\n")
 cat("data.clusters_truth_num:", args$data_clusters_truth_num, "\n")
 
-# TODO: Implement your module logic
-# Process the data using main function
 process_data(args)
