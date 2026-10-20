@@ -53,8 +53,22 @@ process_data <- function(args) {
   )
   
   # pca.tsv
+  expr <- SummarizedExperiment::assay(raw_data, "logcounts")
+  pca <- irlba::prcomp_irlba(
+    t(expr),
+    n = 30,
+    center = TRUE,
+    scale. = FALSE
+  )
+  pca_df <- data.frame(
+    cell_id = colnames(raw_data),
+    pca$x
+  )
+  
+  colnames(pca_df)[-1] <- paste0("PC", 1:30)
+  
   readr::write_tsv(
-    data.frame(),
+    pca_df,
     file.path(args$output_dir, paste0(dataset_name, ".pca.tsv"))
   )
 
