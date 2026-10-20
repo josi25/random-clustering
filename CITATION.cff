@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this module in your publication, please cite as below."
+type: software
+title: "Random Clustering"
+abstract: |
+  It creates random clusters to be used as a baseline
+authors:
+  - family-names: "Josi"
+    given-names: ""
+    email: "josephinemaria.schertler@uzh.ch"
+date-released: "2026-10-20"
+version: "1.0.0"
+license: MIT
+url: "https://github.com/CHANGE_ME/random-clustering"
+repository-code: "https://github.com/CHANGE_ME/random-clustering"
+keywords:
+  - bioinformatics
+  - computational-biology
+  - benchmark
+  - omnibenchmark
+  - module
+references:
+  - title: "Original implementation"
+    authors:
+      - family-names: "Josi"
+        given-names: ""
+    type: software
+    url: "https://github.com/CHANGE_ME/random-clustering"
